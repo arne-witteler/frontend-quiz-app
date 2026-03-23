@@ -64,16 +64,23 @@
         </div>
       </div>
 
-      <div id="question-screen" class="quiz__content" style="display: none;">
+      <div id="question-screen" class="quiz__question-container" style="display: none;">
         <div class="quiz__header">
           <p class="quiz__header-subtitle">Question <span id="current-question-num">1</span> of 10</p>
-          <h2 id="question-text" class="quiz__header-title"></h2>
+          <h2 id="question-text" class="quiz__question"></h2>
         </div>
-        <div class="quiz__buttons-list" id="options-container"></div>
-        <button id="submit-answer" class="quiz__button quiz__button--submit">Submit Answer</button>
+        <div class="quiz__buttons-container">
+          <div class="quiz__buttons-list" id="options-container"></div>
+          <button id="submit-answer" class="quiz__button quiz__button--submit">Submit Answer</button>
+
+          <div class="quiz__error-container" style="visibility: hidden;">
+            <img src="./assets/images/icon-error.svg" alt="Error icon" class="quiz__error-icon">
+            <p id="error-message" class="quiz__error-message">Please select an answer!</p>
+          </div>
+        </div>
       </div>
 
-      <div id="result-screen" class="quiz__content" style="display: none;">
+      <div id="result-screen" class="quiz__result-container" style="display: none;">
         <div class="quiz__header">
           <h1 class="quiz__header-title">Quiz completed <br>
             <span class="quiz__header-title-highlight">You scored...</span></h1>
