@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
+  --color-bg: var(--color-grey-50);
+  --color-text-primary: var(--color-blue-900);
+  --color-text-secondary: var(--color-grey-500);
+  --color-card: var(--color-white);
+
   --color-white: hsl(0, 100%, 100%);
   --color-black: hsl(0, 0%, 0%);
   --color-grey-500: hsl(219, 13%, 44%);

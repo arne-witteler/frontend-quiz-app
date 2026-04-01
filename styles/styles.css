@@ -13,7 +13,7 @@ html, body {
 }
 
 .quiz {
-  background: url(../assets/images/pattern-background-mobile-light.svg);
+  background-image: url(../assets/images/pattern-background-mobile-light.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   padding: 0 24px;
-  background-color: var(--color-grey-50);
+  background-color: var(--color-bg);
 }
 
 .quiz__top-bar {
@@ -87,7 +87,7 @@ html, body {
   width: 12px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--color-white);
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 50%;
@@ -116,7 +116,7 @@ input:checked + .quiz__switch-slider:before {
 
 .quiz__header-title {
   font: var(--text-preset-2-mobile-light);
-  color: var(--color-blue-900);
+  color: var(--color-text-primary);
 }
 
 .quiz__header-title-highlight {
@@ -125,7 +125,7 @@ input:checked + .quiz__switch-slider:before {
 
 .quiz__header-subtitle {
   font: var(--text-preset-5-mobile-italic);
-  color: var(--color-grey-500);
+  color: var(--color-text-secondary);
 }
 
 .quiz__buttons-list {
@@ -140,13 +140,13 @@ input:checked + .quiz__switch-slider:before {
   position: relative;
   justify-content: left;
   padding: 16px;
-  background-color: var(--color-white);
+  background-color: var(--color-card);
   border: none;
   border-radius: 12px;
   cursor: pointer;
   align-items: center;
   font: var(--text-preset-4-mobile);
-  color: var(--color-blue-900);
+  color: var(--color-text-primary);
   gap: 16px;
   width: 100%;
 }
@@ -186,6 +186,7 @@ input:checked + .quiz__switch-slider:before {
 .quiz__button-text {
   font: var(--text-preset-4-mobile);
   text-align: left;
+  color: var(--color-text-primary);
 }
 
 .hidden {
@@ -198,7 +199,7 @@ input:checked + .quiz__switch-slider:before {
 
 .quiz__button.selected .quiz__button-icon-wrapper {
   background-color: var(--color-purple-600);
-  color: white;
+  color: var(--color-white);
 }
 
 .quiz__question-container {
@@ -209,7 +210,7 @@ input:checked + .quiz__switch-slider:before {
 
 .quiz__question {
   font: var(--text-preset-3-mobile);
-  color: var(--color-blue-900);
+  color: var(--color-text-primary);
 }
 
 .quiz__buttons-container {
@@ -284,7 +285,7 @@ input:checked + .quiz__switch-slider:before {
 }
 
 .quiz__result-card {
-  background: var(--color-white);
+  background: var(--color-card);
   border-radius: 12px;
   padding: 32px;
   display: flex;
@@ -302,6 +303,8 @@ input:checked + .quiz__switch-slider:before {
 .quiz__result-topic .quiz__button-icon-wrapper {
   width: 40px;
   height: 40px;
+  border-radius: 6px;
+  padding: 5px;
 }
 
 .quiz__result-score {
@@ -314,16 +317,16 @@ input:checked + .quiz__switch-slider:before {
 #result-score {
   font-size: 64px;
   font-weight: bold;
-  color: var(--color-blue-900);
+  color: var(--color-text-primary);
   font: var(--text-preset-1);
 }
 
 #result-title {
-  color: var(--color-blue-900);
+  color: var(--color-text-primary);
 }
 
 .quiz__result-score p {
-  color: var(--color-grey-500);
+  color: var(--color-text-secondary);
   font: var(--text-preset-5);
 }
 
@@ -340,10 +343,10 @@ input:checked + .quiz__switch-slider:before {
 }
 
 body.dark-mode {
-  --color-grey-50: var(--color-blue-950);
-  --color-white: var(--color-blue-900);
-  --color-blue-900: var(--color-white);
-  --color-grey-500: var(--color-blue-300);
+  --color-bg: var(--color-blue-950);
+  --color-text-primary: var(--color-white);
+  --color-text-secondary: var(--color-blue-300);
+  --color-card: var(--color-blue-850);
 }
 
 body.dark-mode .quiz {
@@ -359,10 +362,10 @@ body.dark-mode .quiz {
 
 @media (min-width: 768px) {
   .quiz {
-    background: url(../assets/images/pattern-background-tablet-light.svg);
+    background-image: url(../assets/images/pattern-background-tablet-light.svg);
     background-repeat: no-repeat;
     padding: 0 64px;
-    background-color: var(--color-grey-50);
+    background-color: var(--color-bg);
   }
 
   .quiz__question {
@@ -430,8 +433,19 @@ body.dark-mode .quiz {
   .quiz__button-icon-wrapper {
     width: 56px;
     height: 56px;
-    border-radius: 12px;
-    padding: 8px;
+  }
+
+  .quiz__button-icon-wrapper span {
+    color: var(--color-grey-500);
+  }
+
+  .quiz__button.selected .quiz__button-icon-wrapper span {
+    color: var(--color-white);
+  }
+
+  .quiz__button.correct .quiz__button-icon-wrapper span,
+  .quiz__button.incorrect .quiz__button-icon-wrapper span {
+    color: var(--color-white);
   }
 
   .quiz__button-text {
