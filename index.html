@@ -20,12 +20,13 @@
         </div>
 
         <div class="quiz__theme-toggle-container">
-          <img src="./assets/images/icon-sun-dark.svg" alt="Sun icon" class="quiz__theme-toggle">
+          <img id="sun-icon" src="./assets/images/icon-sun-dark.svg" alt="Sun icon" class="quiz__theme-toggle">
           <label class="quiz__switch">
             <input class="quiz__switch-input" type="checkbox" id="theme-switch">
             <span class="quiz__switch-slider"></span>
           </label>
-          <img src="./assets/images/icon-moon-dark.svg" alt="Moon icon" class="quiz__theme-toggle">
+
+          <img id="moon-icon" src="./assets/images/icon-moon-dark.svg" alt="Moon icon" class="quiz__theme-toggle">
         </div>
       </div>
 
@@ -64,12 +65,18 @@
         </div>
       </div>
 
-      <div id="question-screen" class="quiz__question-container" style="display: none;">
+      <div id="question-screen" class="quiz__question-container hidden">
         <div class="quiz__header">
           <p class="quiz__header-subtitle">Question <span id="current-question-num">1</span> of 10</p>
           <h2 id="question-text" class="quiz__question"></h2>
+
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-bar-fill"></div>
+          </div>
         </div>
+
         <div class="quiz__buttons-container">
+
           <div class="quiz__buttons-list" id="options-container"></div>
           <button id="submit-answer" class="quiz__button quiz__button--submit">Submit Answer</button>
 
@@ -80,12 +87,34 @@
         </div>
       </div>
 
-      <div id="result-screen" class="quiz__result-container" style="display: none;">
+      <div id="result-screen" class="quiz__result-screen hidden">
+
         <div class="quiz__header">
           <h1 class="quiz__header-title">Quiz completed <br>
             <span class="quiz__header-title-highlight">You scored...</span></h1>
         </div>
-        <div class="quiz__result-container"></div>
+
+        <div class="quiz__result-content">
+
+          <div class="quiz__result-card">
+
+            <div class="quiz__result-topic">
+              <div id="result-icon-wrapper" class="quiz__button-icon-wrapper">
+                <img id="result-icon" src="" class="quiz__button-icon">
+              </div>
+              <p id="result-title" class="quiz__button-text"></p>
+            </div>
+
+            <div class="quiz__result-score">
+              <span id="result-score">0</span>
+              <p>out of <span id="result-total">10</span></p>
+            </div>
+
+          </div>
+
+          <button id="restart-btn" class="quiz__button quiz__button--submit active">Play Again</button>
+
+        </div>
       </div>
 
     </main>

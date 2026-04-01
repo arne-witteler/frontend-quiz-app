@@ -35,4 +35,6 @@
   --text-preset-3-mobile: normal 500 20px/120% var(--font-family);
   --text-preset-4-mobile: normal 500 18px/100% var(--font-family);
   --text-preset-5-mobile-italic: italic 400 14px/150% var(--font-family);
+
+  --content-width: 564px;
 }
