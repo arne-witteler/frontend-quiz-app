@@ -545,4 +545,8 @@ body.dark-mode .quiz {
     .quiz__result-card {
       min-height: 388px;
     }
+
+    .progress-bar {
+      margin-top: 180px;
+    }
   }}

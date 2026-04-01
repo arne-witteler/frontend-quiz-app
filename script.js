@@ -87,27 +87,40 @@ function showQuestion() {
   const letters = ['A', 'B', 'C', 'D'];
 
   questionData.options.forEach((option, index) => {
-    const btn = document.createElement('button');
-    btn.className = 'quiz__button';
-    btn.innerHTML = `
-      <div class="quiz__button-icon-wrapper">
-        <span>${letters[index]}</span>
-      </div>
-      <p class="quiz__button-text"></p>
-    `;
-    
-    btn.querySelector('.quiz__button-text').innerText = option;
-    
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#options-container .quiz__button').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      selectedAnswer = option;
-      submitBtn.classList.add('active');
-      if (errorContainer) errorContainer.style.visibility = 'hidden';
-    });
-    
-    optionsContainer.appendChild(btn);
+  const btn = document.createElement('button');
+  btn.className = 'quiz__button';
+
+  btn.innerHTML = `
+    <div class="quiz__button-icon-wrapper">
+      <span>${letters[index]}</span>
+    </div>
+    <p class="quiz__button-text"></p>
+  `;
+  
+  btn.querySelector('.quiz__button-text').innerText = option;
+
+  btn.setAttribute('tabindex', '0');
+
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#options-container .quiz__button')
+      .forEach(b => b.classList.remove('selected'));
+
+    btn.classList.add('selected');
+    selectedAnswer = option;
+    submitBtn.classList.add('active');
+
+    if (errorContainer) errorContainer.style.visibility = 'hidden';
   });
+
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click();
+    }
+  });
+
+  optionsContainer.appendChild(btn);
+});
 }
 
 submitBtn.addEventListener('click', () => {
